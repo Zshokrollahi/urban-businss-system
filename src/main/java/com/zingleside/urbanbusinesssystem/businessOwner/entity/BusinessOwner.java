@@ -1,4 +1,4 @@
-package com.zingleside.urbanbusinesssystem.businessOwner;
+package com.zingleside.urbanbusinesssystem.businessOwner.entity;
 
 import lombok.*;
 
@@ -22,5 +22,4 @@ public class BusinessOwner {
 
     private Integer phoneNumber;
 
-    private String address;
 }

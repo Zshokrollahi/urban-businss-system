@@ -1,5 +1,6 @@
 package com.zingleside.urbanbusinesssystem.businessOwner;
 
+import com.zingleside.urbanbusinesssystem.businessOwner.entity.BusinessOwner;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 

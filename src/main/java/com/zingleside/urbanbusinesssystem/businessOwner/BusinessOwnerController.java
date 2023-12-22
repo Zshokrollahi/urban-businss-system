@@ -1,5 +1,6 @@
 package com.zingleside.urbanbusinesssystem.businessOwner;
 
+import com.zingleside.urbanbusinesssystem.businessOwner.entity.BusinessOwner;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
