@@ -15,16 +15,16 @@ import java.util.Objects;
 public class Business {
     @Id
     @SequenceGenerator(
-            name = "business_id_sequence",
-            sequenceName = "business_id_sequence"
+            name = "business_id_seq",
+            sequenceName = "business_id_seq",
+            allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
             generator = "business_id_sequence"
     )
     private Integer id ;
-    @Column(nullable = false)
-    private Integer registrationNumber ;
+
     @Column(nullable = false)
     private String name ;
     @Column(nullable = false)
@@ -39,19 +39,18 @@ public class Business {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Business business = (Business) o;
-        return Objects.equals(id, business.id) && Objects.equals(registrationNumber, business.registrationNumber) && Objects.equals(name, business.name) && Objects.equals(phoneNumber, business.phoneNumber) && Objects.equals(description, business.description) && Objects.equals(address, business.address);
+        return Objects.equals(id, business.id) && Objects.equals(name, business.name) && Objects.equals(phoneNumber, business.phoneNumber) && Objects.equals(description, business.description) && Objects.equals(address, business.address);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, registrationNumber, name, phoneNumber, description, address);
+        return Objects.hash(id, name, phoneNumber, description, address);
     }
 
     @Override
     public String toString() {
         return "Business{" +
                 "id=" + id +
-                ", registrationNumber=" + registrationNumber +
                 ", name='" + name + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", deescripton='" + description + '\'' +

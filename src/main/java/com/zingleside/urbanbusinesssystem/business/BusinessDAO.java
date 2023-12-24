@@ -8,4 +8,9 @@ import java.util.Optional;
 public interface BusinessDAO {
     List<Business> selectAllBusinesses();
     Optional<Business> selectBusinessByID();
+    void insertBusiness(Business business);
+    boolean existBusinessWithID(Integer id);
+    void deleteBusinessWithID(Integer businessId);
+    void BusinessUpdate(Business update);
+
 }
