@@ -1,5 +1,6 @@
 package com.zingleside.urbanbusinesssystem.business;
 
+import com.zingleside.urbanbusinesssystem.business.entity.Business;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

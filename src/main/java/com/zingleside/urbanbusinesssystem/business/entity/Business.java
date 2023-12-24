@@ -1,4 +1,4 @@
-package com.zingleside.urbanbusinesssystem.business;
+package com.zingleside.urbanbusinesssystem.business.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
