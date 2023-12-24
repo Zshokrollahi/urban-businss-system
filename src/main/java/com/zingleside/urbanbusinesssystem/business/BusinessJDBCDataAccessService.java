@@ -9,19 +9,33 @@ import java.util.Optional;
 @Repository("jdbc")
 public class BusinessJDBCDataAccessService implements BusinessDAO{
     private final JdbcTemplate jdbcTemplate;
+    private final BusinessRowMapper businessRowMapper;
 
-    public BusinessJDBCDataAccessService(JdbcTemplate jdbcTemplate) {
+    public BusinessJDBCDataAccessService(JdbcTemplate jdbcTemplate, BusinessRowMapper businessRowMapper) {
         this.jdbcTemplate = jdbcTemplate;
+        this.businessRowMapper = businessRowMapper;
     }
 
     @Override
     public List<Business> selectAllBusinesses() {
-        return null;
+        var sql = """
+                select id,name,description,phone_number,address
+                from business
+                """;
+        return jdbcTemplate.query(sql,businessRowMapper);
+
     }
 
     @Override
     public Optional<Business> selectBusinessByID() {
-        return Optional.empty();
+       var sql = """
+               select id,name,description,phone_number,address
+                       from business
+                       where id = ?
+               """ ;
+       return jdbcTemplate.query((sql,businessRowMapper)
+               .stream()
+               .findFirst();
     }
 
     @Override
@@ -53,6 +67,14 @@ public class BusinessJDBCDataAccessService implements BusinessDAO{
 
     @Override
     public void BusinessUpdate(Business update) {
+        if (update.getName() != null){
+            String sql = """
+                    update business  set name = ? where id =?
+                    """;
+            int result = jdbcTemplate.update(sql,update.getName(),update.getId());
+            System.out.println("update business name" + result);
+        }
+
 
     }
 }
