@@ -1,4 +1,4 @@
-package com.zingleside.urbanbusinesssystem.user;
+package com.zingleside.urbanbusinesssystem.user.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
@@ -10,6 +10,7 @@ import lombok.*;
 @ToString
 @EqualsAndHashCode
 public class User {
+    private Long id;
     private String username;
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;

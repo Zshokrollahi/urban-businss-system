@@ -1,7 +1,6 @@
 package com.zingleside.urbanbusinesssystem.business;
 
-import com.zingleside.urbanbusinesssystem.user.User;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.zingleside.urbanbusinesssystem.user.entity.User;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Service;
 
