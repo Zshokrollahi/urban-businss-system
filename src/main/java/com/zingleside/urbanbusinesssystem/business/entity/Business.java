@@ -12,26 +12,21 @@ import java.util.Objects;
 @Getter
 @Setter
 @Entity
+@Table
 public class Business {
     @Id
-    @SequenceGenerator(
-            name = "business_id_seq",
-            sequenceName = "business_id_seq",
-            allocationSize = 1
-    )
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "business_id_sequence"
+            strategy = GenerationType.IDENTITY
     )
-    private Integer id ;
+    private Long id ;
 
-    @Column(nullable = false)
+    @Column
     private String name ;
-    @Column(nullable = false)
+    @Column
     private String phoneNumber;
-    @Column(nullable = false)
+    @Column
     private String description;
-    @Column(nullable = false)
+    @Column
     private String address;
 
     @Override

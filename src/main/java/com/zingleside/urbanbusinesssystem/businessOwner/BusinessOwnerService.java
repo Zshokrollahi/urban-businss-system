@@ -9,14 +9,4 @@ import java.util.List;
 @Service
 public class BusinessOwnerService {
 
-    private final BusinessOwnerRepo businessOwnerRepo;
-
-    public BusinessOwnerService(@Qualifier("fake") BusinessOwnerRepo businessOwnerRepo) {
-        this.businessOwnerRepo = businessOwnerRepo;
-    }
-
-    List<BusinessOwner> getbusinessOwner(){
-        return businessOwnerRepo.getOwner();
-    }
-
 }

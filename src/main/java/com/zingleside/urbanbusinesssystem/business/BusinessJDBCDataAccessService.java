@@ -33,7 +33,7 @@ public class BusinessJDBCDataAccessService implements BusinessDAO{
                        from business
                        where id = ?
                """ ;
-       return jdbcTemplate.query((sql,businessRowMapper)
+       return jdbcTemplate.query(sql,businessRowMapper)
                .stream()
                .findFirst();
     }

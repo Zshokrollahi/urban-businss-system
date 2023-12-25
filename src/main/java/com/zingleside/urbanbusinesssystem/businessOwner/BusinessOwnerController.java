@@ -16,19 +16,14 @@ public class BusinessOwnerController {
         this.businessOwnerService = businessOwnerService;
     }
 
-    @GetMapping("/business")
-    @Operation(description = "this apit returns businesses")
-    List<BusinessOwner> getbusinessOwner(@RequestParam(required = false, value = "owner-name") String ownerName) {
-        return businessOwnerService.getbusinessOwner();
-    }
 
-    @PostMapping("/business")
+    @PostMapping("/business-owner")
     void createNewBusinessOwner(@RequestBody BusinessOwner businessOwner){
         System.out.println("post request");
         System.out.println(businessOwner);
     }
 
-    @PutMapping
+    @PutMapping("/business-owner")
     void updateNewBusinessOwner(@RequestBody BusinessOwner businessOwner){
         System.out.println("update request");
         System.out.println(businessOwner);

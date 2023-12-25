@@ -10,8 +10,7 @@ import java.util.List;
 
 @Repository
 @Primary
-public class BusinessOwnerRepository implements BusinessOwnerRepo{
-    @Override
+public class BusinessOwnerRepository {
     public List<BusinessOwner> getOwner() {
         //TODO connect to real db
         return Collections.emptyList();

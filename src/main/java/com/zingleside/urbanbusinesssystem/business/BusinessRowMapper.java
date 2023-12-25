@@ -14,7 +14,7 @@ public class BusinessRowMapper  implements RowMapper {
     public Object mapRow(ResultSet resultSet, int i) throws SQLException {
 
         Business business = new Business(
-                resultSet.getInt("id"),
+                resultSet.getLong("id"),
                 resultSet.getString("name"),
                 resultSet.getString("description"),
                 resultSet.getString("phoneNumber"),
