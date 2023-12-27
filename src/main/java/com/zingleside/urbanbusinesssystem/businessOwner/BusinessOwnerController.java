@@ -1,5 +1,7 @@
 package com.zingleside.urbanbusinesssystem.businessOwner;
 
+import com.zingleside.urbanbusinesssystem.business.BusinessJDBCDataAccessService;
+import com.zingleside.urbanbusinesssystem.business.entity.Business;
 import com.zingleside.urbanbusinesssystem.businessOwner.entity.BusinessOwner;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -10,9 +12,11 @@ import java.util.List;
 @RestController
 @Tag(name = "Businesses Manager")
 public class BusinessOwnerController {
+
     private final BusinessOwnerService businessOwnerService;
 
-    public BusinessOwnerController(BusinessOwnerService businessOwnerService) {
+    public BusinessOwnerController( BusinessOwnerService businessOwnerService) {
+
         this.businessOwnerService = businessOwnerService;
     }
 

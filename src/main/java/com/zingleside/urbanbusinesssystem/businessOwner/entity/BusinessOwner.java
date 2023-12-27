@@ -1,5 +1,7 @@
 package com.zingleside.urbanbusinesssystem.businessOwner.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.*;
 
 @AllArgsConstructor
@@ -8,7 +10,6 @@ import lombok.*;
 @Setter
 @EqualsAndHashCode
 @ToString
-
 
 public class BusinessOwner {
 

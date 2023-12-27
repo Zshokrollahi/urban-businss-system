@@ -1,6 +1,7 @@
 package com.zingleside.urbanbusinesssystem.user.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Id;
 import lombok.*;
 
 @Setter

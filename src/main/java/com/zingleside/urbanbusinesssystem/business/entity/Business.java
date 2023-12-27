@@ -11,22 +11,17 @@ import java.util.Objects;
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity
-@Table
+
 public class Business {
-    @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY
-    )
+
     private Long id ;
 
-    @Column
     private String name ;
-    @Column
+
     private String phoneNumber;
-    @Column
+
     private String description;
-    @Column
+
     private String address;
 
     @Override

@@ -4,16 +4,20 @@ import com.zingleside.urbanbusinesssystem.user.entity.User;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BusinessService {
+    private final BusinessDAO businessDAO;
     private final JdbcClient jdbcClient;
 
-    public BusinessService( JdbcClient jdbcClient) {
+    public BusinessService(BusinessDAO businessDAO, JdbcClient jdbcClient) {
+        this.businessDAO = businessDAO;
         this.jdbcClient = jdbcClient;
     }
 
     User test(
     ) {
-        return jdbcClient.sql("select * from users where user_name = :id").param("id", 1L).query(User.class).single();
+        return null;
     }
 }
