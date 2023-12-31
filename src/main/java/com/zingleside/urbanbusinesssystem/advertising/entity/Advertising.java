@@ -10,6 +10,4 @@ public record Advertising(
         String description,
 
         BigDecimal price) {
-
-
 }

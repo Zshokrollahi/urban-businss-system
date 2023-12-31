@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Repository
 @Slf4j
@@ -26,6 +27,11 @@ public class AdvertisingJDBCDateAccess implements AdvertisingDAO {
     }
 
     @Override
+    public Optional<Advertising> selectAdvertisingByID(Long id) {
+        return jdbcClient.sql("select * from advertising where id = :id").param("id",id).query(Advertising.class).stream().findFirst();
+    }
+
+    @Override
     public Advertising insertAdvertising(Advertising advertising) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
@@ -36,10 +42,5 @@ public class AdvertisingJDBCDateAccess implements AdvertisingDAO {
                 .param("id", id)
                 .query(Advertising.class).single();
 
-    }
-
-    @Override
-    public List<Advertising> selectPrice() {
-        return null;
     }
 }

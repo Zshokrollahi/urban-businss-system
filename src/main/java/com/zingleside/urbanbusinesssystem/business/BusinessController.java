@@ -12,11 +12,10 @@ import java.util.List;
 public class BusinessController {
 
     private final BusinessJDBCDataAccessService businessJDBCDataAccessService;
-    private final BusinessService businessService;
 
-    public BusinessController(BusinessJDBCDataAccessService businessJDBCDataAccessService, BusinessService businessService) {
+    public BusinessController(BusinessJDBCDataAccessService businessJDBCDataAccessService) {
         this.businessJDBCDataAccessService = businessJDBCDataAccessService;
-        this.businessService = businessService;
+
     }
 
     @GetMapping("/business")
@@ -25,11 +24,7 @@ public class BusinessController {
 
 
     }
-
-    @PostMapping("/business")
-    User createNewBusinessOwner(@RequestBody Business business){
-       return businessService.test();
-    }
+    
 
     @PutMapping
     void updateNewBusinessOwner(@RequestBody Business business ){

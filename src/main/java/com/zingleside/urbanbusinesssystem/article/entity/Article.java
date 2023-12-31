@@ -1,15 +1,10 @@
 package com.zingleside.urbanbusinesssystem.article.entity;
 
-import lombok.*;
+public record Article (
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-public class Article {
-    private Long id;
-    private String title;
-    private String type;
+         Long id ,
+         String title ,
+         String type
+){
+
 }
